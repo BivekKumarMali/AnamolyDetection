@@ -69,7 +69,6 @@ async function AnalyzingObject() {
 }
 
 function CheckAnamoly6() {
-  console.log(totalPhoneUsedTime);
   if (totalPhoneUsedTime > 480000 && AnomalyFlag[5] == 0) {
     var li = document.getElementById("Anomaly6");
     li.appendChild(
@@ -116,8 +115,7 @@ function PartialPresence(detection) {
   if (detection.length >= 1) {
     score = ScoreExtrator(JSON.stringify(detection));
 
-    if (score < 80 || detection.length == 1) {
-      console.log("working", score, totalTimeUserPartialPresent);
+    if (score < 70 || detection.length == 1) {
       totalTimeUserPartialPresent += 100;
       if (
         totalTimeUserPartialPresent > 420000 &&
