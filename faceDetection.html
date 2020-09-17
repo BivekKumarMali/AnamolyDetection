@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="/js/face-api.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script>
+  <!-- Load the coco-ssd model. -->
+  <script src="/js/coo-ssd.js"></script>
+  <!-- Load React. -->
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+
+
+  <script defer src="/js/script.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <video id="video" width="720" height="500" autoplay muted></video>
+    <div class="block1">
+      <button class="btn startBtn" onclick="startVideo()">Start</button>
+      <p id="text"></p>
+      <button class="btn" onclick="PartialPresence()">Stop</button>
+    </div>
+    <div class="block1">
+      <ul id="list">
+        <li id="Anomaly1"></li>
+        <li id="Anomaly2"></li>
+        <li id="Anomaly3"></li>
+        <li id="Anomaly4"></li>
+        <li id="Anomaly5"></li>
+        <li id="Anomaly6"></li>
+      </ul>
+    </div>
+
+
+  </div>
+</body>
+
+</html>

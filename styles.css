@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  position: absolute;
+}
+
+a:link,
+a:visited {
+  background-color: brown;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover,
+a:active {
+  background-color: red;
+}
+
+.container {
+  display: block;
+  width: 720px;
+  border: 2px solid black;
+}
+.block1 {
+  justify-self: space-around;
+  display: flex;
+  flex-direction: row;
+}
+.btn {
+  justify-self: center;
+  margin-left: 25%;
+  margin-right: 15%;
+  background-color: cornflowerblue;
+}
