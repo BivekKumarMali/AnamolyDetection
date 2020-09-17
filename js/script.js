@@ -1,7 +1,5 @@
 const video = document.getElementById("video");
 var detections;
-var time;
-var partailPresenceTime;
 var AnomalyFlag = [0, 0, 0, 0, 0, 0];
 var numberOfStrike = 0;
 var resetStrikeFlag = true;
@@ -9,7 +7,7 @@ var objectModel;
 var totalPhoneUsedTime = 0;
 var totalTimeMultiplePeople = 0;
 var totalTimeUserAbsence = 0;
-totalTimeUserPartialPresent = 0;
+var totalTimeUserPartialPresent = 0;
 
 Promise.all([
   faceapi.nets.faceRecognitionNet.loadFromUri("/models"),
@@ -86,7 +84,7 @@ function CheckAnamoly6() {
 function UserPresence(numberOfPeople) {
   if (numberOfPeople == 0) {
     totalTimeUserAbsence += 100;
-    if (new Date().getTime() - time > 120000 && AnomalyFlag[1] == 0) {
+    if (totalTimeUserAbsence > 120000 && AnomalyFlag[1] == 0) {
       var li = document.getElementById("Anomaly2");
       li.appendChild(
         document.createTextNode(
@@ -122,7 +120,7 @@ function PartialPresence(detection) {
       console.log("working", score, totalTimeUserPartialPresent);
       totalTimeUserPartialPresent += 100;
       if (
-        new Date().getTime() - partailPresenceTime > 420000 &&
+        totalTimeUserPartialPresent > 420000 &&
         AnomalyFlag[3] == 0 &&
         AnomalyFlag[0] == 0
       ) {
