@@ -34,18 +34,18 @@ async function startVideo() {
 video.addEventListener("play", () => {
   setInterval(async () => {
     detections = await faceapi
-      .detectAllFaces(video, new faceapi.TinyFaceDetectorOptions(416, 0))
+      .detectAllFaces(video, new faceapi.TinyFaceDetectorOptions(320, 0))
       .withFaceLandmarks()
       .withFaceDescriptors();
 
     var numberOfPeople = await detections.length;
-    console.log("Number of People", numberOfPeople);
     PredictHands(numberOfPeople);
     MultiplePresence(numberOfPeople);
     UserPresence(numberOfPeople);
     PartialPresence(detections);
     AnalyzingObject();
     CheckAnamoly6();
+    console.log("Number of People", numberOfPeople);
   }, 100);
 });
 
